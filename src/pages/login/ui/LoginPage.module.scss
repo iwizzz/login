@@ -1,0 +1,255 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  display: none;
+  flex: 0 0 42%;
+  max-width: 520px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 2.75rem 3rem;
+  color: $text-secondary;
+  background: $accent;
+
+  @include breakpoint(desktop) {
+    display: flex;
+  }
+}
+
+.brand {
+  @include flexCol(0.75rem);
+}
+
+.brandRow {
+  @include flex(0.875rem);
+  align-items: center;
+}
+
+.logoSlot,
+.iconSlot,
+.socialSlot {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+}
+
+.logoSlot {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.brandName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 16rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.benefits {
+  @include flexCol(1.25rem);
+}
+
+.benefitsTitle {
+  margin: 0;
+  max-width: 18rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.benefitsList {
+  @include flexCol(0.875rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefitItem {
+  @include flex(0.75rem);
+  align-items: flex-start;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.checkSlot {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+.main {
+  @include flexCenter;
+  flex: 1;
+  min-width: 0;
+  padding: 1.5rem 1rem;
+  background: $bg-login;
+
+  @include breakpoint(desktop) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.formCard {
+  width: 100%;
+  max-width: 26.25rem;
+
+  @media (max-width: 1199px) {
+    max-width: 36rem;
+    padding: 2rem 1.75rem;
+    background: $bg-white;
+    border-radius: $radius-lg;
+    box-sizing: border-box;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.mobileBrand {
+  @include flex(0.75rem);
+  align-items: center;
+  margin-bottom: 1.75rem;
+
+  @include breakpoint(desktop) {
+    display: none;
+  }
+}
+
+.mobileBrand .logoSlot {
+  background: $accent;
+}
+
+.mobileBrandName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.title {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  color: $text-primary;
+
+  @include breakpoint(desktop) {
+    text-align: left;
+  }
+}
+
+.form {
+  @include flexCol(1.25rem);
+}
+
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $accent;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.submit {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: $mainFont;
+  line-height: 1.5;
+  color: $text-secondary;
+  background: $accent;
+  border: none;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.92;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.social {
+  @include flexCol(1rem);
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.socialText {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  text-align: center;
+  color: $text-muted;
+}
+
+.socialList {
+  @include flex(1rem);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialSlot {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: $bg-login-footer;
+  cursor: pointer;
+}
+
+.footer {
+  @include flexBetween(0.5rem);
+  margin-top: 2rem;
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  background: $bg-login-footer;
+  border-radius: $radius-lg;
+
+  @include breakpoint(tablet) {
+    @include flexCenter(0.35rem);
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  @include breakpoint(mobile) {
+    @include flexBetween(0.5rem);
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+}
+
+.footerText {
+  margin: 0;
+  color: $text-primary;
+}

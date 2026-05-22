@@ -1,0 +1,28 @@
+@mixin flex($gap: 0px) {
+    display: flex;
+    gap: $gap;
+
+}
+
+@mixin flexBetween($gap: 0px) {
+    @include flex($gap);
+
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+@mixin flexCenter($gap: 0px) {
+    @include flex($gap);
+
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@mixin flexCol($gap: 0px) {
+    @include flex($gap);
+
+    flex-direction: column;
+    
+}
