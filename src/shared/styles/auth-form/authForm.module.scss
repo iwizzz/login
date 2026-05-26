@@ -1,0 +1,31 @@
+.form {
+  @include flexCol(1.25rem);
+}
+
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+.formError {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: $error;
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $accent;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.submitOffset {
+  margin-top: 0.25rem;
+}

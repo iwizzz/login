@@ -1,0 +1,129 @@
+.card {
+  width: 100%;
+  max-width: 26.25rem;
+
+  @media (max-width: 1199px) {
+    max-width: 36rem;
+    padding: 2rem 1.75rem;
+    background: $bg-white;
+    border-radius: $radius-lg;
+    box-sizing: border-box;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.mobileBrand {
+  @include flex(0.75rem);
+  align-items: center;
+  margin-bottom: 1.75rem;
+
+  @include breakpoint(desktop) {
+    display: none;
+  }
+}
+
+.logoSlot {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: $accent;
+}
+
+.mobileBrandName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.description {
+  margin: -0.75rem 0 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: $text-muted;
+}
+
+.title {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  color: $text-primary;
+
+  @include breakpoint(desktop) {
+    text-align: left;
+  }
+}
+
+.social {
+  @include flexCol(1rem);
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.socialText {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  text-align: center;
+  color: $text-muted;
+}
+
+.socialList {
+  @include flex(1rem);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialSlot {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background: $bg-login-footer;
+  cursor: pointer;
+}
+
+.footer {
+  @include flexBetween(0.5rem);
+  margin-top: 2rem;
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  background: $bg-login-footer;
+  border-radius: $radius-lg;
+
+  @include breakpoint(tablet) {
+    @include flexCenter(0.35rem);
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  @include breakpoint(mobile) {
+    @include flexBetween(0.5rem);
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+}
+
+.footerText {
+  margin: 0;
+  color: $text-primary;
+}
+
+.footerLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $accent;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

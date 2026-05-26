@@ -1,2 +1,0 @@
-export { useLoginMutation } from './auth'
-

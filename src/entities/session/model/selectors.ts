@@ -1,11 +1,19 @@
-import { sessionSlice } from './sessionSlice'
+import { SESSION_SLICE_KEY } from './sessionSlice'
 
-export type StateWithSession = {
-  [sessionSlice.name]: ReturnType<typeof sessionSlice.reducer>
+type SessionRootState = {
+  [SESSION_SLICE_KEY]: {
+    accessToken: string | null
+    isBootstrapped: boolean
+  }
 }
 
+export type StateWithSession = SessionRootState
+
 export const selectAccessToken = (state: StateWithSession) =>
-  state.session.accessToken
+  state[SESSION_SLICE_KEY].accessToken
 
 export const selectIsAuthenticated = (state: StateWithSession) =>
-  Boolean(state.session.accessToken)
+  Boolean(state[SESSION_SLICE_KEY].accessToken)
+
+export const selectIsSessionBootstrapped = (state: StateWithSession) =>
+  state[SESSION_SLICE_KEY].isBootstrapped
